@@ -1,0 +1,12 @@
+{
+	"title": {
+		"en": "Integrations"
+	},
+	"index": 0,
+	"paths": [
+		{
+			"controller": "integrations",
+			"action": "index"
+		}
+	]
+}
