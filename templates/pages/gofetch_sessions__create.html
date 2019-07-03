@@ -8,6 +8,6 @@
 
 	{% assign response = "forward_session" | webhook: gofetch_url: project.addon_data.addon_5b9ff6463ab42f43522b30cf.url, encoded_create_session_token: project.addon_data.addon_5b9ff6463ab42f43522b30cf.encoded_create_session_token, session_id: params.session_id, _id: _id, website: website, email: email %}
 
-	{"status": "{{ response.code }}", "body": {{ response.body }}}
+	{"status": "{{ response.code }}", "response_body": "{{ response.body }}"}
 
 {% endif %}
