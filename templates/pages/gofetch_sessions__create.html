@@ -1,15 +1,10 @@
 {% if params.session_id == nil %}
 	{"status": "500", "error": "No session_id provided"}
 {% else %}
-	{% if account != nil %}
-		{% assign _id 		= account._id %}
-		{% assign website = account.website %}
-		{% assign email 	= account.email %}
-	{% else %}
-		{% assign _id 		= nil %}
-		{% assign website = nil %}
-		{% assign email 	= nil %}
-	{% endif %}
+
+	{% assign _id 		= account._id %}
+	{% assign website = account.website %}
+	{% assign email 	= account.email %}
 
 	{% assign response = "forward_session" | webhook: gofetch_url: project.addon_data.addon_5b9ff6463ab42f43522b30cf.url, encoded_create_session_token: project.addon_data.addon_5b9ff6463ab42f43522b30cf.encoded_create_session_token, session_id: params.session_id, _id: _id, website: website, email: email %}
 
