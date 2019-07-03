@@ -1,7 +1,7 @@
 {
 	"forward_session": {
 		"method": "post",
-		"url": "http://{{ gofetch_url }}/api/v1/sessions.json",
+		"url": "http://{{ gofetch_url }}/api/v1/sessions",
 		"headers": {
 			"Authorization": "Basic {{ encoded_create_session_token }}",
 			"Content-Type": "application/json"
