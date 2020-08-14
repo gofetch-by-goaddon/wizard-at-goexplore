@@ -1,2 +1,2 @@
-# wizard-at-goexplore
-Everything you need to onboard webshops through Goexplore.
+# interface-at-goexplore
+The interface that enables you to interact with online shops through Gofetch on Goexplore.
