@@ -1,8 +1,12 @@
 <script>
 	window.locale = "{{ params.locale }}";
-	$(document).on("turbolinks:load", function() {
-		$.getScript("https://{{ project.addon_data.addon_5b9ff6463ab42f43522b30cf.url }}/session_api/v1/assets/script");
-	});
+  var script_url = "https://{{ project.addon_data.addon_5b9ff6463ab42f43522b30cf.url }}/session_api/v1/assets/script";
+  if ($('script[src="' + script_url + '"]').length == 0) {
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = script_url;
+    document.head.appendChild(script);
+  }
 </script>
 
-<div id="gofetch_container"></div>
+<div id="gofetch_container" data-turbolinks-permanent></div>
