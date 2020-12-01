@@ -1,13 +1,20 @@
+<style>
+  .gf-integration:hover {
+    background-color: rgba(0, 0, 0, .03);
+  }
+</style>
+
 <script>
-	window.locale = "{{ params.locale }}";
-  var script_url = "https://{{ project.addon_data.addon_5b9ff6463ab42f43522b30cf.url }}/session_api/v1/assets/script";
-  if ($('script[src="' + script_url + '"]').length == 0) {
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = script_url;
-    document.head.appendChild(script);
+  window.locale = "{{ params.locale }}";
+  var u = "http://{{ project.addon_data.addon_5b9ff6463ab42f43522b30cf.url }}/session_api/v1/assets/script";
+  if ($('script[src="' + u + '"]').length == 0) {
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = u;
+    document.head.appendChild(s);
   } else {
-    window.runGofetch();
+    runGofetch();
   }
 </script>
 
