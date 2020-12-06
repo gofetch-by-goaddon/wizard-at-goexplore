@@ -21,6 +21,10 @@
   };
 
   window.gf_locale = "{{ params.locale }}";
+  window.gf_forward_session_headers = {
+    authenticity_token: window.form_authenticity_token
+  };
+
   var u = "https://{{ project.addon_data.addon_5b9ff6463ab42f43522b30cf.url }}/session_api/v1/assets/script";
   if ($('script[src="' + u + '"]').length == 0) {
     var s = document.createElement('script');
