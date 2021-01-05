@@ -1,6 +1,4 @@
-{% if session.format != "application/json" %}
-  {"status": "422"}
-{% else %}
+{% if session.format == "application/json" %}
   {% assign session_id  = nil | uuid_new %}
   {% assign _id 		    = account._id %}
   {% assign website     = account.website %}
