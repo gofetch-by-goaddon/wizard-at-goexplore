@@ -1,0 +1,6 @@
+{% assign session_id  = nil | uuid_new %}
+{% assign _id 		    = account._id %}
+{% assign website     = account.website %}
+{% assign email       = account.email %}
+{% assign response    = "forward_session" | webhook: gofetch_url: project.addon_data.addon_5b9ff6463ab42f43522b30cf.url, encoded_create_session_token: project.addon_data.addon_5b9ff6463ab42f43522b30cf.encoded_create_session_token, session_id: session_id, _id: _id, website: website, email: email %}
+{{ session_id }}
