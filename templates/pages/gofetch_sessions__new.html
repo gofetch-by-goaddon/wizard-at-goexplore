@@ -1,7 +1,7 @@
 {% if session.format == "application/json" %}
 
   {% assign body        = nil | new_hash %}
-  {% assign session_id  = nil | "123" %}
+  {% assign session_id  = nil | new_uuid %}
   {% assign body        = body | push_to_hash: "session_id", session_id %}
 
   {% if account != nil %}
