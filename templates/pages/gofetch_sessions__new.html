@@ -8,7 +8,16 @@
 
     {% assign body = body | push_to_hash: "_id", account._id %}
     {% assign body = body | push_to_hash: "website", account.website %}
-    {% assign body = body | push_to_hash: "email", user.email %}
+    
+    {% if user.superuser %}
+
+      {% assign body = body | push_to_hash: "email", account.email %}
+
+    {% else %}
+
+      {% assign body = body | push_to_hash: "email", user.email %}
+
+    {% endif %}
 
   {% endif %}
 

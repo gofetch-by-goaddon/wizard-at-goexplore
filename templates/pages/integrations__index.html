@@ -12,16 +12,4 @@
   }
 </script>
 
-{% if user == nil %}
-
-  {% assign div_klass = "px-md-5 my-5" %}
-
-{% else %}
-
-  {% assign div_klass = "" %}
-
-{% endif %}
-
-<div class="{{ div_klass }}">
-  <div id="gf_container" data-turbolinks-permanent></div>
-</div>
+<div id="gf_container" data-turbolinks-permanent></div>
