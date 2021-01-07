@@ -6,11 +6,6 @@
 			"Authorization": "Basic {{ encoded_create_session_token }}",
 			"Content-Type": "application/json"
 		},
-		"body": {
-			"session_id": "{{ session_id }}",
-			"_id": "{{ _id }}",
-			"website": "{{ website }}",
-			"email": "{{ email }}"
-		}
+		"body": "{{ body }}"
 	}
 }

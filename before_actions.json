@@ -1,0 +1,9 @@
+{
+  "authenticate": {
+    "gofetch_interface": false
+  },
+  "container": {
+    "integrations__index": "gofetch_interface",
+    "gofetch_sessions__new": "gofetch_interface"
+  }
+}
