@@ -4,11 +4,10 @@
   {% if account != nil %}
     {% assign body = body | push_to_hash: "_id", account._id %}
     {% assign body = body | push_to_hash: "website", account.website %}
-    {% if user.superuser %}
-      {% assign body = body | push_to_hash: "email", account.email %}
-    {% else %}
-      {% assign body = body | push_to_hash: "email", user.email %}
-    {% endif %}
+    {% assign body = body | push_to_hash: "email", account.email %}
+    {% unless user.superuser %}
+      {% assign body = body | push_to_hash: "user_email", user.email %}
+    {% endunless %}
   {% endif %}
   {% assign response = "forward_session" | webhook: gofetch_url: project.addon_data.addon_5b9ff6463ab42f43522b30cf.url, encoded_create_session_token: project.addon_data.addon_5b9ff6463ab42f43522b30cf.encoded_create_session_token, body: body %}
   {{ session_id }}

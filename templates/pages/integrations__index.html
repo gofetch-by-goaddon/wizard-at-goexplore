@@ -1,6 +1,6 @@
 <script>
   window.gf_locale = "{{ params.locale }}";
-  var u = "http://{{ project.addon_data.addon_5b9ff6463ab42f43522b30cf.url }}/session_api/v1/assets/script";
+  var u = "https://{{ project.addon_data.addon_5b9ff6463ab42f43522b30cf.url }}/session_api/v1/assets/script";
   if (document.querySelector('script[src="' + u + '"]') === null) {
     var s = document.createElement('script');
     s.type = 'text/javascript';
